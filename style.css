@@ -370,7 +370,7 @@ h2{
   justify-content: center;
   border-radius : 50%;
   margin : auto;
-  margin-top : 100px;
+  margin-top : 50px;
   background-color: #f5ba09;
   color: #313552;
   font-size: 50px;
@@ -409,6 +409,108 @@ z-index: -1;
   width: 100%;
   font-size: 70px;
 }
+.contact-wrapper{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "nav-bar"
+    "box"
+}
 
 
 
+.box-wrapper{
+  height: 630px;
+  position: relative;  
+}
+
+
+
+.box{
+  grid-area: box;
+  position: absolute;
+	top:  50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	background-color: #313552;
+	padding: 40px;
+	box-sizing: border-box;
+	border: 1px solid rgba(0,0,0,.1);
+  border-radius: 15px;
+}
+
+
+.box input{
+	padding: 10px 0;
+	margin-bottom: 30px;
+}
+
+.box textarea{
+	height: 120px;
+	padding: 10px 0;
+	margin-bottom: 20px;
+  
+
+}
+
+.box input, .box textarea {
+	width: 100%;
+	box-sizing: border-box;
+	box-shadow: none;
+	outline: none;
+	border: none;
+  background: #1f2235;
+  color: aliceblue;
+  
+
+}
+
+.box input[type="submit"]{
+  font-weight: bolder;
+  font-size: 1.1em;
+	cursor: pointer;
+  background: #313552;
+	color: aliceblue;
+	margin-bottom: 0;
+	text-transform: uppercase;
+  transition: all .2s ease-in-out;
+  position : relative;
+  border-top : #1f2235 hidden 2px;
+}
+
+.box input[type="submit"]:hover{
+  border : #f5ba09 2px solid;
+  background-color: #f5ba09;
+  color: #1f2235;
+
+}
+.box form div{
+	position: relative;
+}
+
+.box form div label {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	color: #999;
+	pointer-events: none;
+	transition: .5s;
+  margin-left: 10px;
+}
+
+.box input:focus ~ label, .box textarea:focus ~ label, 
+.box input:valid ~ label, .box textarea:valid ~ label {
+	top: -30px;
+	left: 0;
+  color: #f5ba09;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.box input:focus ~ label, .box textarea:focus ~ label, 
+.box input:valid, .box textarea:valid {
+  border-bottom: 2px solid #f5ba09;
+}
